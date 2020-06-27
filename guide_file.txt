@@ -1,0 +1,14 @@
+Information =>
+1. There is a .env file in root directory where you can change the configurations for site url, database etc,
+2. For database there a folder in root directory with name "database" there are three collections in that folder products,email_actions,email_templates
+3. I have put screenshots also the work i have done. please check in "screenshots" folder in root directory.
+
+
+1. Copy the all the files in a folder
+2. Open cmd in the project location
+3. Run (npm install) command.
+4. after successfully install npm packages run (node index.js) command.
+5. And open in browser http://localhost:3001/
+6. There is a welcome page alse on welcome page there is a "Navigate" link to view the course listing.
+7. On course listing page there is a action button with label "Buy now".
+8. Click on buy now and a mail will be trigger on the mail with attachment

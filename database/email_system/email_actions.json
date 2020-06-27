@@ -1,0 +1,5 @@
+{ 
+    "_id" : ObjectId("5bcef940848182ba077b23c7"), 
+    "action" : "purchase_course", 
+    "options" : "RECEIPT_NO,IMAGE,RECEIPT_DATE,ALOOCATE_NO,ACCOUNT,CURRENCY,AMOUNT,AMOUNT_IN_WORDS,ITEM_DETAILS"
+}

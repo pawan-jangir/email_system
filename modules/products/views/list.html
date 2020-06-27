@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Radian Softwares</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<style>
+			.alert {margin-top:5%}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<section class="content">
+				<div class="container-fluid">
+					<div id="user-defined-notice"></div>
+					<div id="user-defined-error-notice"></div>
+				</div>
+			</section>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="text-right" style="padding-top: 10px;"><a href="<%= WEBSITE_URL%>" >Back</a></p>
+				</div>
+			</div>
+			<table id="datatable-listing" class="row-border hover table table-bordered cb-data-table" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th width="15%">Course Name</th>
+						<th width="15%">Price ($)</th>
+						<th width="15%">Course Code</th>
+						<th width="15%">Buyer Name</th>
+						<th width="15%">Buyer Email</th>
+						<th width="25%">Action</th>
+					</tr>
+					<%
+						if(typeof result!== typeof undefined && result.length > 0){
+							result.map(record=>{							
+					%>
+						<tr>
+							<th width="15%"><%= record.title %></th>
+							<th width="15%"><%= record.price %></th>
+							<th width="15%"><%= record.product_code %></th>
+							<th width="15%"><%= record.buyer_name %></th>
+							<th width="15%"><%= record.buyer_email %></th>
+							<th width="25%"><a href="<%= WEBSITE_URL %>products/purchase_course/<%= record.slug %>">Buy now</a></th>
+						</tr>
+					<% 	});
+					} %>
+				</thead>
+			</table>
+		</div>
+		<script>
+			function notice(type,message,timeout){
+				timeout = (timeout) ? timeout : 10000;
+				$class 	= '';
+				switch(type){
+					case 'error':
+						$class = 'alert-danger';
+					break;
+					case 'success':
+						$class = 'alert-success';
+					break
+				}
+				$html = '<div class="alert '+$class+' alert-dismissible" role="alert">\
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>\
+							'+message+'\
+						</div>';
+				if(type=="error"){
+					$('#user-defined-error-notice').html($html).show();
+					if($('#user-defined-error-notice').length > 0){
+						$("html,body").animate({scrollTop: $('#user-defined-error-notice').offset().top - 150}, "slow");
+					}
+					if(timeout != 0){
+						setTimeout(function(){
+							$('#user-defined-error-notice').fadeOut(500,function(){
+								$('#user-defined-error-notice').html('');
+							});
+						},timeout);
+					}
+				}
+				if(type=="success"){
+					$('#user-defined-notice').html($html).show();
+					if($('#user-defined-notice').length > 0){
+						$("html,body").animate({scrollTop: $('#user-defined-notice').offset().top - 150}, "slow");
+					}
+					if(timeout != 0){
+						setTimeout(function(){
+							$('#user-defined-notice').fadeOut(500,function(){
+								$('#user-defined-notice').html('');
+							});
+						},timeout);
+					}
+				}
+			}// end notice()
+		</script>
+		<script type="text/javascript">
+			<% if (success_status) { %>
+				notice('<%= success_status %>','<%- success_flash_message %>');
+			<% } %>
+			<% if (error_status) { %>
+				notice('<%= error_status %>','<%- error_flash_message %>');
+			<% } %>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+{ 
+    "_id" : ObjectId("5ef6139661d8fb09c4d78c13"), 
+    "title" : "Math Course", 
+    "buyer_name" : "Pawan", 
+    "buyer_email" : "pawan.jangir2@gmail.com", 
+    "description" : "csacscasc", 
+    "subjects" : [
+        ObjectId("5ef5f852dad287208427c3ca"), 
+        ObjectId("5ef5f845dad287208427c3c9")
+    ], 
+    "price" : NumberInt(5000), 
+    "duration" : NumberInt(30), 
+    "product_code" : "MACLK", 
+    "slug" : "math-course", 
+    "status" : NumberInt(1), 
+    "is_deleted" : NumberInt(0), 
+    "created" : ISODate("2020-06-26T15:26:14.216+0000"), 
+    "modified" : ISODate("2020-06-26T15:33:54.700+0000")
+}
+{ 
+    "_id" : ObjectId("5ef615995916ac17a43734a0"), 
+    "title" : "Test", 
+    "description" : "dd", 
+    "buyer_name" : "Sandeep Parwal", 
+    "buyer_email" : "sandeep.p@rediansoftware.com", 
+    "subjects" : [
+        ObjectId("5ef5f852dad287208427c3ca"), 
+        ObjectId("5ef5f845dad287208427c3c9")
+    ], 
+    "price" : NumberInt(500), 
+    "duration" : NumberInt(90), 
+    "product_code" : "TE9XY", 
+    "slug" : "test", 
+    "status" : NumberInt(1), 
+    "is_deleted" : NumberInt(0), 
+    "created" : ISODate("2020-06-26T15:34:49.298+0000")
+}
+{ 
+    "_id" : ObjectId("5ef61d3d09acb627e01d7194"), 
+    "title" : "Math Course", 
+    "description" : "Test description", 
+    "buyer_name" : "John Doe", 
+    "buyer_email" : "john.doe@mailinator.com", 
+    "subjects" : [
+        ObjectId("5ef5f863dad287208427c3cc"), 
+        ObjectId("5ef5f858dad287208427c3cb")
+    ], 
+    "price" : NumberInt(500), 
+    "duration" : NumberInt(21), 
+    "product_code" : "MAXZK", 
+    "slug" : "math-course", 
+    "status" : NumberInt(1), 
+    "is_deleted" : NumberInt(0), 
+    "created" : ISODate("2020-06-26T16:07:25.357+0000"), 
+    "modified" : ISODate("2020-06-26T16:08:42.122+0000")
+}
+{ 
+    "_id" : ObjectId("5ef6391bdc958b130cab9fd2"), 
+    "title" : "Science Course", 
+    "buyer_name" : "Alisha", 
+    "buyer_email" : "alisha@mailinator.com", 
+    "description" : "scasc", 
+    "subjects" : [
+        ObjectId("5ef5f852dad287208427c3ca"), 
+        ObjectId("5ef5f863dad287208427c3cc")
+    ], 
+    "price" : NumberInt(500), 
+    "duration_type" : NumberInt(3), 
+    "duration" : NumberInt(3), 
+    "product_code" : "SC97Z", 
+    "slug" : "science-course", 
+    "status" : NumberInt(1), 
+    "is_deleted" : NumberInt(0), 
+    "created" : ISODate("2020-06-26T18:06:19.551+0000"), 
+    "modified" : ISODate("2020-06-26T18:06:37.985+0000")
+}
